@@ -12,7 +12,7 @@ export default function Home() {
               <span className="inline-block py-1.5 px-4 rounded-full bg-secondary-container/30 text-primary font-bold text-sm tracking-tight mb-6">CloudNote AI Beta v2.0</span>
               <h1 className="text-[3.5rem] leading-[1.1] font-extrabold text-on-surface tracking-[-0.03em] mb-6 headline">
                 당신의 아이디어를<br />
-                <span className="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">클라우드에</span>
+                <span className="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">클라우드에 남기세요!!</span>
               </h1>
               <p className="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-md">
                 어디서든 메모하고, AI가 알아서 정리해드립니다. 복잡한 생각의 조각들을 하나의 인사이트로 연결하세요.

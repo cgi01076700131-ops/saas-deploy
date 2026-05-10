@@ -14,7 +14,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "CloudNote",
-  description: "당신의 아이디어를 클라우드에",
+  description: "당신의 아이디어를 클라우드에 남기세요!!",
 };
 
 import Header from '@/components/Header';
