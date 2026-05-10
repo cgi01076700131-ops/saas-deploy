@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-tint": "#005bc1",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-fixed": "#001a41",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "tertiary-container": "#c64f00",
+                    "background": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "outline": "#717786",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface-variant": "#e1e3e4",
+                    "on-secondary-fixed-variant": "#26467d",
+                    "on-surface": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary": "#405e96",
+                    "primary-container": "#0070eb",
+                    "on-background": "#191c1d",
+                    "on-tertiary-container": "#fffbff",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-fixed": "#351000",
+                    "surface-container-high": "#e7e8e9",
+                    "primary": "#0058bc",
+                    "outline-variant": "#c1c6d7",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary": "#9e3d00",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#414755",
+                    "secondary-container": "#a1befd",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#adc6ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#2d4c83",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary-fixed": "#001a41",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-primary-container": "#fefcff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .note-editor-canvas { line-height: 1.8; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-hidden">
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f3f4f5] flex flex-col p-6 gap-8 z-40">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-gradient-to-br from-primary to-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</div>
+<span class="text-lg font-bold text-[#191c1d]">내 워크스페이스</span>
+</div>
+<button class="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-container text-white py-3 px-4 rounded-xl font-semibold shadow-sm hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>새 노트 작성</span>
+</button>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-4 py-3 bg-white text-[#0058bc] rounded-xl shadow-sm font-semibold">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span>대시보드</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#405e96] hover:bg-[#ffffff]/50 rounded-xl transition-transform duration-200 hover:translate-x-1">
+<span class="material-symbols-outlined text-xl">description</span>
+<span>모든 노트</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#405e96] hover:bg-[#ffffff]/50 rounded-xl transition-transform duration-200 hover:translate-x-1">
+<span class="material-symbols-outlined text-xl">star</span>
+<span>즐겨찾기</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#405e96] hover:bg-[#ffffff]/50 rounded-xl transition-transform duration-200 hover:translate-x-1">
+<span class="material-symbols-outlined text-xl">delete</span>
+<span>휴지통</span>
+</div>
+</nav>
+<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-outline-variant/15">
+<div class="flex items-center gap-3 px-4 py-3 text-[#405e96] hover:bg-[#ffffff]/50 rounded-xl transition-transform duration-200 hover:translate-x-1">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>설정</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#405e96] hover:bg-[#ffffff]/50 rounded-xl transition-transform duration-200 hover:translate-x-1">
+<span class="material-symbols-outlined text-xl">help</span>
+<span>도움말</span>
+</div>
+</div>
+</aside>
+<main class="ml-64 flex h-screen">
+<section class="w-[30%] bg-surface-container-low flex flex-col">
+<div class="p-6 border-b border-outline-variant/15">
+<h2 class="text-xl font-bold tracking-tight mb-4">나의 노트</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="노트 검색..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar p-4 space-y-4">
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-on-surface line-clamp-1">2024년 2분기 프로젝트 전략</h3>
+<span class="text-[10px] text-outline font-medium">10분 전</span>
+</div>
+<p class="text-xs text-secondary line-clamp-2 leading-relaxed">이번 분기에는 사용자 경험 고도화와 클라우드 동기화 안정성 강화에 집중할 계획입니다. 특히 모바일 환경에서의...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] rounded-full text-secondary">업무</span>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest/60 rounded-xl hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-semibold text-on-surface line-clamp-1 group-hover:text-primary transition-colors">주말 쇼핑 리스트</h3>
+<span class="text-[10px] text-outline font-medium">2시간 전</span>
+</div>
+<p class="text-xs text-secondary line-clamp-2 leading-relaxed">유기농 우유, 샐러드용 채소, 파스타 면, 토마토 소스, 그리고 세탁 세제 잊지 말기. 마켓컬리 주문 내역 확인 필수.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] rounded-full text-secondary">개인</span>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest/60 rounded-xl hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-semibold text-on-surface line-clamp-1">UI/UX 디자인 시스템 가이드라인</h3>
+<span class="text-[10px] text-outline font-medium">어제</span>
+</div>
+<p class="text-xs text-secondary line-clamp-2 leading-relaxed">컬러 토큰 정의: Primary, Secondary, Tertiary 계열의 명도 단계별 정의 및 접근성 가이드라인 준수 여부 확인.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] rounded-full text-secondary">디자인</span>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest/60 rounded-xl hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-semibold text-on-surface line-clamp-1">신규 서비스 아이디어 스케치</h3>
+<span class="text-[10px] text-outline font-medium">3일 전</span>
+</div>
+<p class="text-xs text-secondary line-clamp-2 leading-relaxed">AI 기반의 자동 노트 요약 기능 및 태그 추천 시스템. 사용자의 필기 습관을 분석하여 맞춤형 템플릿 제공...</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] rounded-full text-secondary">아이디어</span>
+</div>
+</div>
+</div>
+</section>
+<section class="w-[70%] bg-white flex flex-col">
+<div class="px-10 py-6 flex justify-between items-center border-b border-outline-variant/10">
+<div class="flex gap-4">
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">format_bold</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">format_italic</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">format_list_bulleted</span>
+</button>
+<div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">attach_file</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">image</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-secondary hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg">share</span>
+                        공유하기
+                    </button>
+<button class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg shadow-sm hover:bg-primary-container transition-colors">
+                        저장
+                    </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-12 max-w-4xl mx-auto w-full">
+<header class="mb-10">
+<div class="flex items-center gap-2 text-sm text-outline mb-4">
+<span class="font-medium">작성일: 2024년 5월 24일 오후 2:30</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="font-medium">마지막 수정: 방금 전</span>
+</div>
+<input class="w-full text-4xl font-black tracking-tight text-on-surface border-none focus:ring-0 p-0 mb-6 placeholder-surface-variant" placeholder="제목을 입력하세요" type="text" value="2024년 2분기 프로젝트 전략"/>
+<div class="flex gap-2 items-center">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">#업무</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full">#전략</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-full cursor-pointer hover:bg-surface-container-highest">+ 태그 추가</span>
+</div>
+</header>
+<div class="note-editor-canvas text-lg text-on-surface outline-none min-h-[500px]" contenteditable="true">
+                    이번 분기 핵심 목표는 <strong>사용자 경험의 극대화</strong>입니다. <br/><br/>
+                    우리는 다음 세 가지 주요 영역에 집중할 것입니다:<br/>
+                    1. 클라우드 동기화 대기 시간 50% 단축<br/>
+                    2. 마크다운 에디터 기능 고도화 및 실시간 미리보기 개선<br/>
+                    3. 오프라인 모드에서의 데이터 무결성 보장<br/><br/>
+<div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+<img class="w-full h-64 object-cover" data-alt="modern office meeting space with professional collaborative atmosphere and warm natural sunlight through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhVc83Qk91MT2qP39VMrpukIsDNGQ0AB3HouYuqojpEPNiL6kuXhLn1w9dgutDm1NVvFzjB5pbwMy5qggfdwuN3UVhjsDcgFdrMX0a-Jb2MWwRssDFWvIMsaaZYpJP6msSKF82nzivc6c89lTeXMSqCS-JcYzgjjwOHv05LgltYiX0k-AW-LgmF5iYkDVi5sWC_l3Qqj_53AM9i5wXFNJjWQh27wH-QME2A3KCP_wZxci0DUx8csonyWk-_ESV4iMR8IPDb_t2okH8"/>
+</div>
+
+                    팀별 세부 실행 계획은 다음 주 월요일 주간 회의에서 구체화할 예정입니다. 각 파트 담당자분들께서는 미리 관련 자료를 검토해 주시기 바랍니다.
+                </div>
+</div>
+</section>
+</main>
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-on-surface/40 backdrop-blur-sm p-6">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-[0px_24px_64px_rgba(25,28,29,0.15)] flex flex-col overflow-hidden">
+<div class="p-6 flex justify-between items-center border-b border-outline-variant/10">
+<h2 class="text-xl font-bold tracking-tight">새 노트 작성</h2>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-secondary uppercase tracking-wider">노트 제목</label>
+<input class="w-full px-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-on-surface" placeholder="제목을 입력하세요" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-secondary uppercase tracking-wider">카테고리</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3 border-2 border-primary bg-primary/5 text-primary font-bold rounded-xl">
+<span class="material-symbols-outlined text-lg">work</span>
+                            업무
+                        </button>
+<button class="flex items-center justify-center gap-2 py-3 border-2 border-transparent bg-surface-container-low text-secondary font-bold rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">person</span>
+                            개인
+                        </button>
+<button class="flex items-center justify-center gap-2 py-3 border-2 border-transparent bg-surface-container-low text-secondary font-bold rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">lightbulb</span>
+                            아이디어
+                        </button>
+<button class="flex items-center justify-center gap-2 py-3 border-2 border-transparent bg-surface-container-low text-secondary font-bold rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+                            기타
+                        </button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-secondary uppercase tracking-wider">내용</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-on-surface resize-none" placeholder="생각을 기록해 보세요..." rows="4"></textarea>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low flex gap-3 justify-end">
+<button class="px-6 py-3 font-bold text-secondary hover:bg-surface-container-high rounded-xl transition-colors">
+                    취소
+                </button>
+<button class="px-8 py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-xl shadow-lg hover:scale-[1.02] active:scale-95 transition-all">
+                    노트 생성
+                </button>
+</div>
+</div>
+</div>
+</body></html>

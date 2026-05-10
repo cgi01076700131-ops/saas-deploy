@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#005bc1",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed": "#001a41",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "tertiary-container": "#c64f00",
+                        "background": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "outline": "#717786",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#26467d",
+                        "on-surface": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#405e96",
+                        "primary-container": "#0070eb",
+                        "on-background": "#191c1d",
+                        "on-tertiary-container": "#fffbff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#0058bc",
+                        "outline-variant": "#c1c6d7",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary": "#9e3d00",
+                        "surface-container": "#edeeef",
+                        "on-surface-variant": "#414755",
+                        "secondary-container": "#a1befd",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adc6ff",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#2d4c83",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#001a41",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-primary-container": "#fefcff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .korean-headline { letter-spacing: -0.02em; line-height: 1.2; }
+        .korean-body { line-height: 1.6; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex overflow-hidden">
+<!-- Left Side: Service Intro -->
+<section class="hidden lg:flex w-1/2 relative flex-col justify-between p-16 overflow-hidden bg-gradient-to-br from-primary to-primary-container">
+<!-- Abstract Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,100 C30,80 70,120 100,100 L100,0 L0,0 Z" fill="white"></path>
+</svg>
+</div>
+<!-- Logo/Brand -->
+<div class="relative z-10 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary text-4xl" data-weight="fill">cloud</span>
+<span class="text-2xl font-black text-on-primary tracking-tighter">CloudNote</span>
+</div>
+<!-- Content -->
+<div class="relative z-10 space-y-8 max-w-xl">
+<div class="space-y-4">
+<h1 class="text-5xl font-extrabold text-on-primary korean-headline">
+                    생각을 정리하는<br/>새로운 방법
+                </h1>
+<p class="text-xl text-primary-fixed-dim korean-body font-medium opacity-90">
+                    흩어진 아이디어를 클라우드 위에서 체계적으로 큐레이션하세요. 복잡한 생각도 CloudNote와 함께라면 단순해집니다.
+                </p>
+</div>
+<div class="flex items-center gap-4 py-8">
+<div class="flex -space-x-3">
+<img class="w-12 h-12 rounded-full border-2 border-primary" data-alt="professional woman smiling in natural light outdoor portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZL_Cz5RoyfLeypG4xDkq3H-CT0JvO9yWCToObZeZcVH-ZxoGMywlZUy1OPUVBN4AvHmDEibz5KcVLOy-B3uQP8RY-VkRkqHSogSUqrDdEkbJAWO0X2DAu9IDdP64vemsyfSnUGNOez1h67OJ00VSIZ6dtgZa-Lw8n2Ilhc2vVmBil9MFx141iKSSun9AkXhd5FFxldqfOHQUw-omQx6oezkb8d_3YCVBJXMuBsixz9Upxep_w3uiKNTREnShwVcm0lt2dQJze1sBl"/>
+<img class="w-12 h-12 rounded-full border-2 border-primary" data-alt="cheerful man with glasses in studio portrait with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC28URCNAzqzXEFVQqi_d5_FJbAxdRdnJ9cuAahnOlMrHPkHUOnTC0En12oK3p5c4XCzUfAqPJF5L6rIMrkM63lo8-O1H5wVqZI0kgosjafy1GXsicV_mRj-W_8sYRMuFyZsOA-qnkq-ORHyLq1RyrpV7AivxriA_PvUYbBPmUAVe66L04lxJZtyGWSVnEOBDAIrJWjJ4f5GXwFGSSFBdTrcy9rJoxoJC40wYidvlvP4vWIDdmrDBO5-5KDH4ARGq7qmQeK5IfoFE79"/>
+<img class="w-12 h-12 rounded-full border-2 border-primary" data-alt="corporate professional woman in office setting looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb3841HZbuWd5RFkugeyBqyQxe_DFfvWnQQk-JESV2WswTzC8v-vRpXn6wFSWLXGpeYnN--UfV4CGPi5fr2kjoz8RzUHt4I84w7PXrfZW3R00vtEWQUFTQO9uNg7e2JWcXQrKv2aNAa0zpVKxqECpWGIeBTdEVMkpyKtiD52i4MZqjZ2ISz8SudThW3116bQ1e0FLQzCR17W0atZdljKbcrGDtMrf1BsJCcIg7ijNy968jMhLAzZ5JlGy7BNiOCBOxejiBrM_iwkg9"/>
+<div class="w-12 h-12 rounded-full bg-on-primary-fixed-variant flex items-center justify-center text-xs text-on-primary font-bold border-2 border-primary">
+                        +10만
+                    </div>
+</div>
+<p class="text-on-primary font-semibold text-sm">
+                    10만 명의 사용자가 선택한 지능형 노트 서비스
+                </p>
+</div>
+</div>
+<!-- Footer Visual -->
+<div class="relative z-10">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-2xl p-6 border border-on-primary/10">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-on-primary opacity-60">format_quote</span>
+<p class="text-on-primary italic text-lg leading-relaxed opacity-80">
+                        "노트 필기 그 이상입니다. 매일의 워크플로우가 훨씬 부드러워졌어요."
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Auth Forms -->
+<main class="w-full lg:w-1/2 flex items-center justify-center bg-surface p-8 overflow-y-auto">
+<div class="w-full max-w-md space-y-10">
+<!-- Mobile Brand Logo (Visible only on small screens) -->
+<div class="lg:hidden flex justify-center mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">cloud</span>
+<span class="text-xl font-black text-on-surface tracking-tighter">CloudNote</span>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex p-1 bg-surface-container-low rounded-2xl">
+<button class="flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm">
+                    로그인
+                </button>
+<button class="flex-1 py-3 text-sm font-medium text-secondary rounded-xl hover:bg-surface-container-high transition-all duration-200">
+                    회원가입
+                </button>
+</div>
+<!-- Login Form Canvas -->
+<div class="space-y-6">
+<div class="space-y-2">
+<h2 class="text-2xl font-bold tracking-tight text-on-surface korean-headline">반가워요! 다시 오셨군요.</h2>
+<p class="text-sm text-secondary font-medium">서비스 이용을 위해 로그인해주세요.</p>
+</div>
+<form class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant px-1 uppercase tracking-wider" for="email">이메일 주소</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg transition-colors group-focus-within:text-primary">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-xl text-sm focus:ring-2 focus:ring-primary-fixed-dim transition-all placeholder:text-outline" id="email" placeholder="example@cloudnote.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant px-1 uppercase tracking-wider" for="password">비밀번호</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg transition-colors group-focus-within:text-primary">lock</span>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-high border-none rounded-xl text-sm focus:ring-2 focus:ring-primary-fixed-dim transition-all placeholder:text-outline" id="password" placeholder="비밀번호를 입력하세요" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-md border-outline-variant text-primary focus:ring-primary-fixed-dim focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-on-surface-variant font-medium group-hover:text-on-surface transition-colors">로그인 상태 유지</span>
+</label>
+<a class="text-sm font-semibold text-primary hover:underline" href="#">비밀번호 찾기</a>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-xl font-bold text-base shadow-lg shadow-primary/10 hover:scale-[1.01] active:scale-[0.98] transition-all" type="submit">
+                        로그인
+                    </button>
+</form>
+<!-- Divider -->
+<div class="relative flex items-center gap-4 py-4">
+<div class="flex-1 h-[1px] bg-outline-variant opacity-15"></div>
+<span class="text-xs font-bold text-outline uppercase tracking-widest">간편 로그인</span>
+<div class="flex-1 h-[1px] bg-outline-variant opacity-15"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-lowest border border-outline-variant/15 rounded-xl hover:bg-surface-container-low transition-colors shadow-sm">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-semibold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 bg-[#FEE500] rounded-xl hover:opacity-90 transition-opacity shadow-sm">
+<svg class="w-5 h-5" fill="#3C1E1E" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.558 1.707 4.8 4.27 6.054l-1.085 3.98c-.04.15.047.307.19.34.053.01.107.01.16 0l4.675-3.102c.26.026.524.043.79.043 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"></path>
+</svg>
+<span class="text-sm font-semibold text-[#3C1E1E]">카카오톡</span>
+</button>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="pt-10 flex flex-col items-center gap-4 border-t border-outline-variant/15">
+<div class="flex gap-6">
+<a class="text-xs font-medium text-outline hover:text-primary transition-colors" href="#">이용약관</a>
+<a class="text-xs font-medium text-outline hover:text-primary transition-colors" href="#">개인정보처리방침</a>
+<a class="text-xs font-medium text-outline hover:text-primary transition-colors" href="#">고객지원</a>
+</div>
+<p class="text-[10px] text-outline/60 font-medium">© 2024 CloudNote. All rights reserved.</p>
+</div>
+</div>
+</main>
+<!-- Success Message Pop-up Example (Hidden by default) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-4 bg-surface-container-lowest shadow-[0px_12px_32px_rgba(25,28,29,0.06)] rounded-2xl flex items-center gap-3 border border-outline-variant/15 opacity-0 pointer-events-none transition-all">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<p class="text-sm font-semibold text-on-surface">환영합니다! 로그인이 성공했습니다.</p>
+</div>
+</body></html>
